@@ -68,7 +68,7 @@ const mins = this.pad(Math.floor((time % (1000 * 60 * 60)) / (1000 * 60)));
 
 const timer1 = new CountdownTimer({
   selector: '#timer-1',
-  targetDate: new Date('Oct 31, 2020'),
+  targetDate: new Date('Nov 3, 2020'),
 });
 
 document.addEventListener("DOMContentLoaded", timer1.start());
