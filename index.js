@@ -11,24 +11,24 @@ class CountdownTimer{
 
 
   start() {
-
+    this.timeSharing();
+    
    this.timeId = setInterval(() => {
-      const currentTime = Date.now();
-      const time = this.targetDate - currentTime;
-      // console.log('start -> currentTime', currentTime);
-      // console.log('start -> startTime', startTime);
-      
-      // console.log(currentTime - startTime);
-      this.getTimeComponents(time);
+     this.timeSharing();
     }, 1000)
   };
 
-//   remainingTime({ days, hours, mins, secs }) {
-//     daysEl.textContent = `${days}`;
-//   hoursEl.textContent = `${hours}`;
-//   minsEl.textContent = `${mins}`;
-//   secsEl.textContent = `${secs}`;
-//  }
+  getTime() {
+    const currentTime = Date.now();
+    const time = this.targetDate - currentTime;
+    return time;
+  };
+  
+  
+  timeSharing() {
+    this.getTimeComponents(this.getTime());
+}
+
   
   pad(value) {
     return String(value).padStart(2, '0');
